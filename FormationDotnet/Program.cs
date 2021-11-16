@@ -8,6 +8,17 @@ string[] choices = new string[3]
     "charger une nouvelle partie", 
     "quitter le jeu" 
 };
+
+string[] characters = new string[3]
+{
+    "1. Hermione",
+    "2. Harry Potter",
+    "3. Ron"
+};
+
+var animals = Enum.GetValues(typeof(AnimalType));
+
+
 // for (int i = 0; i < choices.Length; i++)
 // {
 //     Console.WriteLine(choices[i]);
@@ -111,6 +122,32 @@ while (! isDone)
         // Démarrage du jeu
         DateTime startGame = DateTime.Now;
         Console.WriteLine($"Le jeu a commencé le : {startGame.Year}/{startGame.Month} à {startGame.Hour} // {startGame.ToString("dddd ddd dd MMMM yy")}");
+
+        Console.WriteLine("Choisissez votre personnage");
+        for (int i = 0; i < characters.Length; i++)
+        {
+            Console.WriteLine(characters[i]);
+        }
+        Console.WriteLine("C'est à vous :");
+        string characterChoice = Console.ReadLine();
+
+        Console.WriteLine("Choisissez un surnom");
+        string characterSurnameChoice = Console.ReadLine();
+
+        Console.WriteLine("Choisissez votre animal de compagnie");
+        for (int i = 0; i < animals.Length; i++)
+        {
+            AnimalType animalType = (AnimalType) animals.GetValue(i);
+
+            Console.WriteLine( $"{(int)animalType}. {animalType}" );
+        }
+        Console.WriteLine("C'est à vous :");
+        string animalChoice = Console.ReadLine();
+
+
+        string animalSurnameChoice = animals.GetValue(int.Parse(animalChoice)).ToString();
+
+        Console.WriteLine($"Vous êtes {characterChoice}, avec {animalSurnameChoice}, et vous vous appelez {characterSurnameChoice}");
     }
 }
 
