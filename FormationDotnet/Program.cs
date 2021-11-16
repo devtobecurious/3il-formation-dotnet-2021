@@ -1,5 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using FormationDotnet;
+using System.Globalization;
+
+System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
+var culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+Console.WriteLine(culture);
 
 
 string[] choices = new string[3] 
@@ -121,7 +127,7 @@ while (! isDone)
     {
         // Démarrage du jeu
         DateTime startGame = DateTime.Now;
-        Console.WriteLine($"Le jeu a commencé le : {startGame.Year}/{startGame.Month} à {startGame.Hour} // {startGame.ToString("dddd ddd dd MMMM yy")}");
+        Console.WriteLine($"Le jeu a commencé le : {startGame.Year}/{startGame.Month} à {startGame.Hour} // {startGame.ToString("dddd ddd dd MMMM yy", new CultureInfo("es-ES"))}");
 
         Console.WriteLine("Choisissez votre personnage");
         for (int i = 0; i < characters.Length; i++)
