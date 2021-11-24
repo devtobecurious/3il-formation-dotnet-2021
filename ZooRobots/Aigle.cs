@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooRobots
 {
-    public class Aigle
+    public class Aigle : Animal
     {
         #region Attributs
         public int Id;
@@ -46,6 +46,16 @@ namespace ZooRobots
         public void Senvoler()
         {
             Console.WriteLine("I believe I can fly");
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Id} - {this.Prenom}";
+        }
+
+        public override void Dormir()
+        {
+            Console.WriteLine("Je dors dans un nid, cuicui");
         }
         #endregion
     }

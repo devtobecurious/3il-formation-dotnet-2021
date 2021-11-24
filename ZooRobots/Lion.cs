@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooRobots
 {
-    public class Lion
+    public class Lion : Animal
     {
         #region Attributs
         public int Id;
