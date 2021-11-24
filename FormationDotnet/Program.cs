@@ -2,6 +2,7 @@
 using FormationDotnet;
 using System.Globalization;
 
+
 System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
 var culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
@@ -15,14 +16,27 @@ string[] choices = new string[3]
     "quitter le jeu" 
 };
 
-string[] characters = new string[3]
+//string[] characters = new string[3]
+//{
+//    "1. Hermione",
+//    "2. Harry Potter",
+//    "3. Ron"
+//};
+
+List<Character> characters = new List<Character>()
 {
-    "1. Hermione",
-    "2. Harry Potter",
-    "3. Ron"
+    new Character(1, "Hermione"),
+    new Character(2, "Harry Potter"),
+    new Character(3, "Ron")
 };
 
-var animals = Enum.GetValues(typeof(AnimalType));
+// var animals = Enum.GetValues(typeof(AnimalType));
+List<AnimalCompagnie> animals = new List<AnimalCompagnie>()
+{
+    new AnimalCompagnie(1, "Rat"),
+    new AnimalCompagnie(1, "Hibou"),
+    new AnimalCompagnie(1, "Chat")
+};
 
 
 // for (int i = 0; i < choices.Length; i++)
@@ -129,33 +143,77 @@ while (! isDone)
         DateTime startGame = DateTime.Now;
         Console.WriteLine($"Le jeu a commencé le : {startGame.Year}/{startGame.Month} à {startGame.Hour} // {startGame.ToString("dddd ddd dd MMMM yy", new CultureInfo("es-ES"))}");
 
-        Console.WriteLine("Choisissez votre personnage");
-        for (int i = 0; i < characters.Length; i++)
-        {
-            Console.WriteLine(characters[i]);
-        }
-        Console.WriteLine("C'est à vous :");
-        string characterChoice = Console.ReadLine();
+        string characterChoice = RequestChoiceCharacter();
 
         Console.WriteLine("Choisissez un surnom");
         string characterSurnameChoice = Console.ReadLine();
 
-        Console.WriteLine("Choisissez votre animal de compagnie");
-        for (int i = 0; i < animals.Length; i++)
-        {
-            AnimalType animalType = (AnimalType) animals.GetValue(i);
+        string animalChoice = RequestChoiceAnimal();
 
-            Console.WriteLine( $"{(int)animalType}. {animalType}" );
-        }
-        Console.WriteLine("C'est à vous :");
-        string animalChoice = Console.ReadLine();
-
-
-        string animalSurnameChoice = animals.GetValue(int.Parse(animalChoice)).ToString();
-
-        Console.WriteLine($"Vous êtes {characterChoice}, avec {animalSurnameChoice}, et vous vous appelez {characterSurnameChoice}");
+        //string animalSurnameChoice = animals.GetValue(int.Parse(animalChoice)).ToString();
+        //Console.WriteLine($"Vous êtes {characterChoice}, avec {animalSurnameChoice}, et vous vous appelez {characterSurnameChoice}");
     }
 }
 
+/// <summary>
+/// Demande le choix du perso, apres avoir affiché la liste des persos possibles
+/// Retourne le choix du joueur
+/// </summary>
+string RequestChoiceCharacter()
+{
+    Console.WriteLine("Choisissez votre personnage");
+
+    DisplayCharacterList();
+
+    Console.WriteLine("C'est à vous :");
+    string characterChoice = Console.ReadLine();
+
+    return characterChoice;
+}
+
+void DisplayCharacterList()
+{
+    for (int i = 0; i < characters.Count; i++)
+    {
+        // Console.WriteLine(characters[i].ToString());
+        Console.WriteLine(characters[i]); // Attention ça bugg ici :)
+    }
+}
+
+
+/// <summary>
+/// Demande le choix de l'animal, apres avoir affiché la liste des animaux possibles
+/// Retourne le choix du joueur
+/// </summary>
+string RequestChoiceAnimal()
+{
+    Console.WriteLine("Choisissez votre animal de compagnie");
+
+    DisplayAnimalList();
+
+    Console.WriteLine("C'est à vous :");
+    string animalChoice = Console.ReadLine();
+
+    return animalChoice;
+}
+
+void DisplayAnimalList()
+{
+    for (int i = 0; i < animals.Count; i++)
+    {
+        // Console.WriteLine(characters[i].ToString());
+        Console.WriteLine(animals[i]); // Attention ça bugg ici :)
+    }
+}
+
+
+// On verra plus tard
+void DisplayItemsFromList(List<object> list)
+{
+    for (int i = 0; i < list.Count; i++)
+    {
+        Console.WriteLine(list[i]); 
+    }
+}
 
 
