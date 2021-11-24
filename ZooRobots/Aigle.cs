@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZooRobots
 {
-    public class Aigle : Animal
+    public class Aigle : Oiseau
     {
         #region Attributs
         public int Id;
@@ -20,7 +20,7 @@ namespace ZooRobots
         #endregion
 
         #region Constructors
-        public Aigle(int id, string prenom)
+        public Aigle(int id, string prenom) : base(id, prenom)
         {
             this.Id = id;
             this.Prenom = prenom;
@@ -57,6 +57,13 @@ namespace ZooRobots
         {
             Console.WriteLine("Je dors dans un nid, cuicui");
         }
+
+        #region Public methods
+        public override void Voler()
+        {
+            Console.WriteLine("Je vole super méga haut");
+        }
+        #endregion
         #endregion
     }
 }

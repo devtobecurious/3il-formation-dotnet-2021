@@ -54,11 +54,23 @@ List<Animal> animals = new List<Animal>();
 
 animals.Add(new Aigle(1, "Thorondor"));
 animals.Add(new Lion("Simba"));
+animals.Add(new Perroquet(1, "Coco", true));
 
 
 foreach (Animal item in animals)
 {
     item.Dormir();
+    item.SeDeplacer();
+
+    //if (item is Oiseau)
+    //{
+    //    Oiseau oiseauBis = (Oiseau)item;
+    //    oiseauBis.Voler();
+    //}
+
+    //var oiseau = item as Oiseau;
+
+    //(item as Oiseau)?.Voler();
 }
 
 

@@ -12,5 +12,10 @@ namespace ZooRobots
         {
             Console.WriteLine("Je dors ");
         }
+
+        public virtual void SeDeplacer()
+        {
+            Console.WriteLine("Je me déplace ");
+        }
     }
 }
