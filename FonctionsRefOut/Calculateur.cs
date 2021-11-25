@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace FonctionsRefOut
 {
-    internal class Calculateur
+    
+        internal class Calculateur
     {
         #region Public methods
         public void Add(int val1, int val2, ref int resultat)
         {
-            resultat = val1 + val2;
+            int result = val1 + val2;
         }
 
         public int Add(int val1, int val2)
@@ -76,6 +77,8 @@ namespace FonctionsRefOut
         //{
         //    return (val1 + val2).ToString();
         //}
+
+        
         #endregion
     }
 }

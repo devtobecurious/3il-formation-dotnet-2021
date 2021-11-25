@@ -176,7 +176,8 @@ void DisplayCharacterList()
     for (int i = 0; i < characters.Count; i++)
     {
         // Console.WriteLine(characters[i].ToString());
-        Console.WriteLine(characters[i]); // Attention ça bugg ici :)
+        var character = characters[i];
+        Console.WriteLine(character); // Attention ça bugg ici :)
     }
 }
 

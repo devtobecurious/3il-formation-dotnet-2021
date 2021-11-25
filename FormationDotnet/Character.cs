@@ -23,5 +23,12 @@ namespace FormationDotnet
             this.Surname = libelle;
         }
         #endregion
+
+        #region Public methods
+        public override string ToString()
+        {
+            return $"{this.Id} - {this.Surname}";
+        }
+        #endregion
     }
 }

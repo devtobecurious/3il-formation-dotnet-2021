@@ -24,5 +24,12 @@ namespace FormationDotnet
             this.Libelle = libelle;
         }
         #endregion
+
+        #region Public methods
+        public override string ToString()
+        {
+            return $"{this.Id} - {this.Libelle}";
+        }
+        #endregion
     }
 }
