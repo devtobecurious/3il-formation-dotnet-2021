@@ -204,16 +204,19 @@ void DisplayAnimalList()
         // Console.WriteLine(characters[i].ToString());
         Console.WriteLine(animals[i]); // Attention ça bugg ici :)
     }
+
+    // DisplayItemsFromList(animals.Cast<object>());
 }
 
 
-// On verra plus tard
-void DisplayItemsFromList(List<object> list)
+#region On verra plus tard
+void DisplayItemsFromList(IEnumerable<object> list)
 {
-    for (int i = 0; i < list.Count; i++)
+    foreach (var item in list)
     {
-        Console.WriteLine(list[i]); 
+        Console.WriteLine(item);
     }
 }
+#endregion
 
 
