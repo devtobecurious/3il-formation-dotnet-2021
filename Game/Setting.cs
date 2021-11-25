@@ -9,6 +9,8 @@ namespace GameProject
     internal class Setting
     {
         #region Fields
+        public string Name { get; set; } = "valeur par defaut";
+
         private int _nbRows;
         #endregion
 
@@ -23,6 +25,11 @@ namespace GameProject
             }
             set
             {
+                if (value < 0)
+                {
+                    value = 0;
+                }
+
                 this._nbRows = value;
             }
         }
