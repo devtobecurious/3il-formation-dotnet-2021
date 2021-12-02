@@ -8,7 +8,8 @@ namespace AuBoulot
 {
     internal class DevelopPerson : Person
     {
-        public event Action TravailFini;
+        public delegate void TravailFiniDelegate(RapportTravail rapport);
+        public event TravailFiniDelegate TravailFini;
 
         public void Travailler()
         {
@@ -16,7 +17,12 @@ namespace AuBoulot
             Console.WriteLine($"{ this.Prenom }, je travaille");
             Console.WriteLine($"{ this.Prenom }, je travaille");
 
-            this.TravailFini();
+            var rapport = new RapportTravail()
+            {
+                UrlGithub = "http://"
+            };
+
+            this.TravailFini(rapport);
         }
 
         public void FaireAutreTache()

@@ -33,18 +33,19 @@ chief.Team.Add(claudine);
 tom.TravailFini += TravailFini;
 tom.TravailFini += PrevenirBoss;
 
+tom.TravailFini += chief.ControlerTravail;
 tom.TravailFini += christelle.FaireAutreTache;
 tom.TravailFini += claudine.FaireAutreTache;
 
 chief.DonnerTravail(tom);
 
 
-void TravailFini()
+void TravailFini(RapportTravail rapport)
 {
     Console.WriteLine("Le travail est fini");
 }
 
-void PrevenirBoss()
+void PrevenirBoss(RapportTravail rapport)
 {
     Console.WriteLine("je previens le boss");
 }
