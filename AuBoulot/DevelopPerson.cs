@@ -25,7 +25,7 @@ namespace AuBoulot
             this.TravailFini(rapport);
         }
 
-        public void FaireAutreTache()
+        public void FaireAutreTache(RapportTravail rapport)
         {
             Console.WriteLine($"{ this.Prenom }, je fais une autre tâche");
         }
