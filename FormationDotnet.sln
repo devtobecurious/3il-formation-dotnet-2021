@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalGame.Lib", "FinalGame.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecouverteLinq", "DecouverteLinq\DecouverteLinq.csproj", "{AE0F72B2-9895-4F00-93B0-438F634B27C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseEFCore", "DatabaseEFCore\DatabaseEFCore.csproj", "{D8746BFA-CD93-471D-8E34-EAA8B27AB119}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{AE0F72B2-9895-4F00-93B0-438F634B27C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0F72B2-9895-4F00-93B0-438F634B27C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0F72B2-9895-4F00-93B0-438F634B27C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8746BFA-CD93-471D-8E34-EAA8B27AB119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8746BFA-CD93-471D-8E34-EAA8B27AB119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8746BFA-CD93-471D-8E34-EAA8B27AB119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8746BFA-CD93-471D-8E34-EAA8B27AB119}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +124,7 @@ Global
 		{0A6FA57D-7EE7-448C-8022-3B96501F41C8} = {3C929924-BEAC-49FC-B3AB-70A8E50BCB24}
 		{678AC3B5-B87C-410A-872A-EA9EFCD13271} = {A2586B30-717E-4F77-806E-672DD360158A}
 		{AE0F72B2-9895-4F00-93B0-438F634B27C1} = {3C929924-BEAC-49FC-B3AB-70A8E50BCB24}
+		{D8746BFA-CD93-471D-8E34-EAA8B27AB119} = {3C929924-BEAC-49FC-B3AB-70A8E50BCB24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5CF9C731-B57E-4691-8068-53C2BF7F9473}
