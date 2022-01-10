@@ -1,0 +1,30 @@
+﻿@model List<Drone.Library.Models.Drone>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Drones actifs (en cours d'utilisation)</h1>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Etat</th>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.RegistrationNumber
+                </td>
+                <td>
+                    @item.UseStatus
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
